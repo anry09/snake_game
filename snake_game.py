@@ -119,17 +119,7 @@ class MAIN:
 
         screen.blit(score_surface,score_rect)
         
-    def chack_win(self):
-        font = pygame.font.SysFont(None, 100)
-        img = font.render('You win', True, (0,0,0))
-        
-        if len(self.snake.body) - 3 == 6:
-            event = threading.Event()
-            screen.blit(img, (200, 200))
-            event.wait(5)
-            screen.blit(img, (200, 200))
-            
-            self.game_over()
+    
 
 
 
@@ -173,6 +163,5 @@ while True:
 
     screen.fill((175,215,70))
     main_game.draw_elements()
-    main_game.chack_win()
     pygame.display.update()
     clock.tick(1000)
